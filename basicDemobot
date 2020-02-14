@@ -1,0 +1,28 @@
+#include <kipr/botball.h>
+
+void turn_gyro(int left_wheel_speed, int right_wheel_speed, int degree);
+void drive_straight_gyro(int speed, int time);
+void line_follow()
+
+int main() {
+  
+  //do wait_for_light calibration. 
+  //do bias calibration
+  //http://files.kipr.org/gcer/2018/Using%20the%20Gyroscope%20in%20Botball.pdf
+  
+  int bias = //insert bias
+  int right_motor = //insert number;
+  int left_motor = //insert number;
+  int slam_servo = //insert number;
+  int grab_servo = //insert number;
+  
+  wait_for_light(0);
+  shut_down_in(119);
+  
+}
+
+void turn_gyro(int left_wheel_speed, int right_wheel_speed, int degree){
+}
+
+void drive_straight_gyro(int speed, int time){
+}
