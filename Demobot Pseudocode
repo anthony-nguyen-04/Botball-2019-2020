@@ -1,0 +1,133 @@
+int main ()
+{
+	//demobot in mineral lab in position facing mineral transport
+	enable_servos();
+	
+  mrp(motor, speed, position); //moving towards mineral transport
+	mrp(motor, speed, position);
+
+  mrp(moto, speed, position); //turning 90 degrees to the (demobot’s) left towards mineral transport
+	mrp(moto, speed position);
+	
+  set_servo_position(port #, position); //lower arm
+	set_servo_position(port #, position); //open claw
+	
+  mrp(motor, speed, position); //move forward
+	mrp(motor, speed, position);
+	
+  set_servo_position(port #, position); //close claw
+	
+  mrp(motor, speed, position); //move backwards
+	mrp(motor, speed, position);
+	
+	mrp(motor, speed, position); //turn 90 degrees left again to face mine carts
+	mrp(motor, speed, position);
+	
+	mrp(motor, speed, position); //move straight forward 
+	mrp(motor, speed, position);
+	
+	mrp(motor, speed, position); //turn 90 degrees left to drop mineral transport
+	mrp(motor, speed, position);
+
+  set_servo_position(port #, position); //open claw, drop mineral transport
+
+	mrp(motor, speed, position); //turn 90 degrees right
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //move straight forward towards mine carts
+	mrp(motor, speed, position);
+
+	set_servo_position(port #, position); //raise arm
+	
+  mrp(motor, speed, position); //move forward to push 1st mine cart
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //move backwards
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //turn 90 degrees right
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //move forwards towards 2nd mine cart
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //turn 90 degrees left
+	mrp(motor, speed, position);
+	
+  mrp(motor, speed, position); //move forward to push 2nd mine cart
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //move backwards
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //turn 90 degrees right
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //move forwards towards 3rd mine cart
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //turn 90 degrees left
+	mrp(motor, speed, position);
+	
+  mrp(motor, speed, position); //move forward to push 3rd mine cart
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //move backwards
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //turn 180 degrees right
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //move forward towards processed ore cubes
+	mrp(motor, speed, position);
+	
+  mrp(motor, speed, position); //turn 90 degrees left
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //move forward to push over processed ore cubes and move under ramp
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //turn 90 degrees left
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //move forward to push 1st mine cart
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //move backwards
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //turn 90 degrees right
+	mrp(motor, speed, position);
+	
+  mrp(motor, speed, position); //move forwards towards 2nd mine cart
+	mrp(motor, speed, position);
+	
+  mrp(motor, speed, position); //turn 90 degrees left
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //move forward to push 2nd mine cart
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //move backwards
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //turn 90 degrees right
+	mrp(motor, speed, position);
+	
+  mrp(motor, speed, position); //move forwards towards 3rd mine cart
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //turn 90 degrees left
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //move forward to push 3rd mine cart
+	mrp(motor, speed, position);
+
+  mrp(motor, speed, position); //move backwards
+	mrp(motor, speed, position);
+
+	//don’t know where to go after this but Anna’s strategy says to shut down
+
+	disable_servos();
+  return 0;
+} 
