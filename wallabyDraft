@@ -1,0 +1,105 @@
+int main(){
+	enable_servos();
+	
+	int left_motor = ;
+	int right_motor = ;
+	int armPort = ;
+	int clawPort = ;
+	int clawOpenPos = ;
+	int clawClosePos = ;
+	int armUpPos = ;
+	int armDownPos = ;
+	int blackThreshold = ;
+	int bias = 0;
+
+
+	wait_for_light(0);
+	shut_down_in(119);
+
+	ao();
+	return(0);
+}
+
+
+
+//560,000 "theta" degrees = 90 normal degrees
+
+void claw_open(){
+	set_servo_position(clawPort, clawOpenPos);
+}
+
+void claw_close(){
+	set_servo_position(clawPort, clawClosePos);
+}
+
+void arm_up(){
+	set_servo_position(armPort, armUpPos);
+}
+
+void arm_down(){
+	set_servo_position(armPort, armDownPos);
+}
+
+void line_follow(int speed, int time){
+	double startTime = seconds();
+	while (seconds() - startTime < time){	
+		if (analog(1) > blackThreshold){
+			mav(right_motor, 750);
+			mav(left_motor, 300);
+		}
+		else {
+			mav(left_motor, 750);
+			mav(right_motor, 300);
+		}
+	}
+
+}
+
+void drive_gyro(int speed, int time){
+	double startTime = seconds();
+	double theta = 0;
+	while (seconds() - startTime < time){
+		if(theta < 1000 && theta > -1000){
+			mav(right_motor, speed);
+			mav(left_motor, speed);
+		}
+		else if (theta < 1000){
+			mav(right_motor, speed + 100);
+			mav(left_motor, speed - 1000);
+		}
+		else {
+			mav(right_motor, speed - 100);
+			mav(left_motor, speed + 100);
+		}
+		msleep(10);
+		theta += (gyro_z() - bias) * 10
+	}
+
+}
+
+void turn_with_gyro(int left_wheel_speed, int right_wheel_speed, double targetTheta){
+	double theta = 0;
+	mav(right_motor, right_wheel_speed);
+	mav(left_motor, left_motor_speed);
+	
+	while (theta < targetTheta){
+		msleep(10);
+		theta += abs(gyro_z() - bias) * 10;
+	}
+	
+	mav(right_motor, 0);
+	mav(left_motor, 0);
+
+}
+
+void calibrate _gyro(){
+	int i = 0;
+	double avg = 0.0;
+	while (i < 50){
+		avg += gyro_z();
+		msleep(1);
+		i++
+	}
+	bias = avg / 50;
+	printf("New Bias: %f\n", bias);
+}
