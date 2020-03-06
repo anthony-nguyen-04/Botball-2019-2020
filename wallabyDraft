@@ -1,15 +1,15 @@
 int main(){
 	enable_servos();
 	
-	int left_motor = ;
-	int right_motor = ;
-	int armPort = ;
-	int clawPort = ;
-	int clawOpenPos = ;
-	int clawClosePos = ;
-	int armUpPos = ;
-	int armDownPos = ;
-	int blackThreshold = ;
+	int left_motor = 1;
+	int right_motor = 0;
+	int armPort = 3;
+	int clawPort = 2;
+	int clawOpenPos = 660;
+	int clawClosePos = 1350;
+	int armUpPos = 550;
+	int armDownPos = 1500;
+	//int blackThreshold = ;
 	int bias = 0;
 
 
